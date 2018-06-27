@@ -1,0 +1,42 @@
+/* Definimos un ancho y lo movemos a la derecha*/
+.navigation{
+  width: 15em;
+  right: -15em; 
+  position: absolute;
+  overflow: hidden;
+  display: block;
+  height: 10000%;
+  background-color: #000;
+}
+/* En escritorio reseteamos el max-height y lo posicionamos relativamente */
+@media only screen and (min-width: 37.5em){
+	.navigation{
+	  max-height: inherit; 
+	  position: relative;
+	  right: inherit; //anulamos su posición fuera de la pantalla
+	  width: auto; //le damos todo el ancho que necesite
+	  background: transparent;
+	}
+}
+.navigation li{
+  display: block; //los elementos van uno debajo de otro
+}
+@media only screen and (min-width: 37.5em){
+.navigation li{
+  display: inline-block; //los elementos van en línea
+}
+}
+.navigation-toggle {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 10px;
+  right: 0px;
+}
+/* Ocultamos el enlace en pantallas anchas */
+@media only screen and (min-width: 37.5em){
+  .navigation-toggle{
+    width: 0;
+    height: 0;
+  }
+}
